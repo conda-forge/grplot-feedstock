@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/grplot-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/grplot-{{ version }}.tar.gz
   sha256: e4bdddfef6376f0f7c59af78c4c6a2514fda2faee9ced9721fe9da2b1befc685
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools >=42
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy >=1.15
     - scipy >=1.0
     - matplotlib-base >=2.2,<4
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/ghiffaryr/grplot
