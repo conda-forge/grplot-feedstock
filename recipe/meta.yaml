@@ -1,5 +1,5 @@
 {% set name = "grplot" %}
-{% set version = "0.14" %}
+{% set version = "0.14.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/grplot-{{ version }}.tar.gz
-  sha256: e4bdddfef6376f0f7c59af78c4c6a2514fda2faee9ced9721fe9da2b1befc685
+  sha256: d2e8d6906e3383587b2a8ba74d61fe526aa284e983326838df269c90830ce567
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,9 +21,9 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - numpy >=1.15
+    - numpy >=1.15,<1.27
     - scipy >=1.0
-    - matplotlib-base >=2.2,<4
+    - matplotlib-base >=2.2,<3.8
     - pandas >=0.23,<1.6
     - ipython >=6.0
     - seaborn
