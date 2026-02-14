@@ -1,5 +1,5 @@
 {% set name = "grplot" %}
-{% set version = "0.14.2" %}
+{% set version = "0.14.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/grplot-{{ version }}.tar.gz
-  sha256: d2e8d6906e3383587b2a8ba74d61fe526aa284e983326838df269c90830ce567
+  sha256: bff06d1f596cd3f799468219927c109e37b1c7a0b06795d7a0c5c787f0ca9095
 
 build:
   noarch: python
